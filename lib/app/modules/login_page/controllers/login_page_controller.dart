@@ -53,11 +53,13 @@ class LoginPageController extends GetxController {
         email: emailC.text,
         password: passC.text,
       );
-      if (userCredential.user!.emailVerified == true) {
-        isLoading.value = false;
-        Get.offAllNamed(Routes.HOME_PAGE);
-      } else {
-        log('Belum Verifikasi');
+      if (userCredential.user != null) {
+        if (userCredential.user!.emailVerified == true) {
+          // isLoading.value = false;
+          Get.offAllNamed(Routes.HOME_PAGE);
+        } else {
+          log('Belum Verifikasi');
+        }
       }
     } on FirebaseAuthException catch (error) {
       Get.snackbar('Terjadi Kesalahans', error.code.toString());
