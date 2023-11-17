@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/employee_data_page/bindings/employee_data_page_binding.dart';
+import '../modules/employee_data_page/views/employee_data_page_view.dart';
 import '../modules/home_page/bindings/home_page_binding.dart';
 import '../modules/home_page/views/home_page_view.dart';
 import '../modules/login_page/bindings/login_page_binding.dart';
@@ -23,6 +25,11 @@ class AppPages {
       name: _Paths.HOME_PAGE,
       page: () => const HomePageView(),
       binding: HomePageBinding(),
+    ),
+    GetPage(
+      name: _Paths.EMPLOYEE_DATA_PAGE,
+      page: () => const EmployeeDataPageView(),
+      binding: EmployeeDataPageBinding(),
     ),
   ];
 }
